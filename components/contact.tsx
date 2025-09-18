@@ -24,10 +24,10 @@ export function Contact() {
 
   emailjs
     .send(
-      "service_2etqqjr",    // Replace with your service ID
-      "template_g0x8myq",   // Replace with your template ID
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,    // Replace with your service ID
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,   // Replace with your template ID
       formData,
-      "_GMNyPUAnp9kUG1wH"     // Replace with your public key
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!     // Replace with your public key
     )
     .then(
       (result) => {
